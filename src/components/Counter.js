@@ -1,27 +1,30 @@
 import React from 'react';
 
 class Counter extends React.Component {
+
   render() {
+      
+    console.log(this.props);
+
+    
     return (
       <div className='container-fluid mx-2'>
         <div className='row'>
-          <div className='col-12'>
+          <div className='col-6'>
             <div>
               <h1>Counter</h1>
-              {/* variable of type object used in h2 html tag */}
-              <h2>{this.state.count}</h2>
-              {/* button created for increment or decrement value */}
+              <h2>{this.props.count}</h2>
               <button
                 type='button'
                 className='px-5 mx-4 btn btn-danger'
-                onClick={this.handleMinusBtn}
+                onClick={this.props.substract}
               >
                 -
               </button>
               <button
                 type='button'
                 className='px-5 mx-4 btn btn-success'
-                onClick={this.handlePlusBtn}
+                onClick={this.props.increment}
               >
                 +
               </button>
