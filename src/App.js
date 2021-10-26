@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    // variable state
+    this.state = {
+      count: 0,
+    };
+  }
+  // custom function = handleBtnMinus method allows us to decrement
+  handleMinusBtn = (event) => {
+    console.log(event.target.value);
+  }
+
+  handlePlusBtn = (event) => {
+    console.log(event.target.value);
+  }
+
+  render() {
+    return (
+      <div className='container-fluid mx-2'>
+        <div className='row'>
+          <div className='col-12'>
+            <div>
+            <h1>Counter</h1>
+            {/* variable of type object used in h2 html tag */}
+            <h2>{this.state.count}</h2>
+            {/* button created for increment or decrement value */}
+            <button type="button" className="px-5 mx-4 btn btn-danger" onClick={this.handleMinusBtn}>-</button>
+            <button type="button" className="px-5 mx-4 btn btn-success" onClick={this.handlePlusBtn}>+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
